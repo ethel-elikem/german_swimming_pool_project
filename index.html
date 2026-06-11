@@ -948,6 +948,22 @@ html,body{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden}
   padding: 1.5rem 0 .5rem;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  #tab-expression.tab-panel.active {
+    height: auto !important;
+    justify-content: flex-start !important;
+    padding-top: 1rem !important;
+    overflow-y: auto;
+  }
+  .sr-ew-grid { grid-template-columns: 1fr !important; }
+  .sr-col-body { gap: .6rem !important; }
+  .sr-col-header { font-size: .9rem !important; }
+  .sr-de { font-size: .95rem !important; }
+  .sr-en { font-size: .85rem !important; }
+  #tab-expression .tab-next { margin-top: 1.5rem !important; }
+  .short-reviews-section { margin: 1rem 0 !important; }
+}
 </style>
 <script>
 function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
@@ -1308,7 +1324,6 @@ function switchTab(name,btn){
       </div>
     </div>
     <div class="tab-next">
-      <button onclick="switchTab('themes',document.querySelectorAll('.tab-btn')[1])">What is contested →</button>
       <button onclick="scrollToSection('why')">Why it matters →</button>
     </div>
   </div>
