@@ -156,7 +156,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);
 .stat-block{
   border:1px solid rgba(79,179,217,.2);
   padding:1.8rem 2.2rem;
-  opacity:0;transform:translateY(24px);transition:all .6s ease;
+  opacity:1;transform:none;transition:all .6s ease;
 }
 .stat-block.vis{opacity:1;transform:none}
 .stat-block:last-child{
@@ -529,7 +529,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);
   border:1px solid rgba(79,179,217,.3);max-width:220px;line-height:1.45}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:all .65s ease}
+.reveal{opacity:1;transform:none;transition:all .65s ease}
 .reveal.vis{opacity:1;transform:none}
 
 /* ── 4-dimension × time matrix ── */
@@ -562,8 +562,8 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);
 .snip-period-unknown{background:transparent;color:rgba(255,255,255,.2);border-color:rgba(255,255,255,.1);font-style:italic;font-weight:400}
 
 /* ── Rotating finding cards ── */
-.rotating-findings{position:relative;overflow:hidden;margin:1.2rem 0}
-.rf-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);will-change:transform}
+.rotating-findings{position:relative;margin:1.2rem 0}
+.rf-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);will-change:transform;overflow:hidden}
 .rf-slide{min-width:100%;width:100%;box-sizing:border-box;flex-shrink:0}
 .rf-slide .findings-grid{margin:0}
 .rf-slide .timeline-section{margin:0}
@@ -705,7 +705,6 @@ html,body{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden}
 #slide-prev{left:1.2rem}
 #slide-next{right:1.2rem}
 .slide-arrow.hidden{opacity:0;pointer-events:none}
-#research .story-inner,#question .why-inner,#why .why-inner{height:100%;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;padding:3rem 6rem;overflow-y:auto}
 #why{display:flex;flex-direction:column}
 #why .why-inner{flex:1;overflow-y:auto}
 /* 4K scaling */
@@ -802,21 +801,9 @@ html,body{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden}
 
 
 /* Research: story-inner fills full slide height and scrolls */
-#research .story-inner {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  padding: 2.5rem 3rem;
-  display: flex;
-  flex-direction: column;
-}
-
+#research 
 /* ── Slide 2 compact to fit 100vh ── */
-#research .story-inner { padding: 1.5rem 3rem !important; gap: 0; }
-#research .s-kicker  { margin-bottom: .4rem; }
+#research #research .s-kicker  { margin-bottom: .4rem; }
 #research .s-lead    { margin-bottom: .5rem; font-size: clamp(1.6rem,2.5vw,2.6rem) !important; }
 #research .s-body    { margin-bottom: .6rem; font-size: clamp(.95rem,1.2vw,1.3rem) !important; }
 #research .stat-blocks { margin-bottom: .6rem; }
@@ -863,8 +850,7 @@ html,body{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden}
   .rv-quote    { font-size: clamp(1rem,4vw,1.2rem) !important; }
 
   /* ── Slide 2: Research ── */
-  #research .story-inner { padding: 1.2rem 1.2rem !important; }
-  #research .s-lead      { font-size: clamp(1.4rem,5vw,1.8rem) !important; line-height: 1.3; }
+  #research   #research .s-lead      { font-size: clamp(1.4rem,5vw,1.8rem) !important; line-height: 1.3; }
   #research .s-body      { font-size: .9rem !important; }
   .stat-blocks           { grid-template-columns: 1fr !important; gap: .6rem; }
   #research .sb-num      { font-size: 2.4rem !important; }
@@ -963,6 +949,19 @@ html,body{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden}
   .sr-en { font-size: .85rem !important; }
   #tab-expression .tab-next { margin-top: 1.5rem !important; }
   .short-reviews-section { margin: 1rem 0 !important; }
+}
+
+/* ── Slide 2: story-inner fills slide and scrolls ── */
+#research .story-inner {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
 }
 </style>
 <script>
@@ -1513,8 +1512,16 @@ function hideTip(){tip.style.display="none"}
 // ═══════════════════════════════════════════════════
 // SCROLL REVEAL
 // ═══════════════════════════════════════════════════
-const revObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("vis")})},{threshold:0.1});
-document.querySelectorAll(".reveal,.stat-block").forEach(el=>revObs.observe(el));
+// Reveal all elements immediately (horizontal paging breaks IntersectionObserver)
+document.querySelectorAll(".reveal,.stat-block").forEach(el=>el.classList.add("vis"));
+// Also reveal when navigating to a slide
+const _origGoTo = window._goToSlide;
+window._goToSlide = function(idx){
+  if(_origGoTo) _origGoTo(idx);
+  setTimeout(()=>{
+    document.querySelectorAll(".reveal,.stat-block").forEach(el=>el.classList.add("vis"));
+  }, 100);
+};
 
 // Init state map as soon as page is fully loaded and painted
 window.addEventListener("load",function(){
