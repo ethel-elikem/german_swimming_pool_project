@@ -1,0 +1,122 @@
+{
+  "RERUN_PLAN_WITH_ENHANCED_KEY_ROTATION": {
+    "summary": "Running classification on 8,356 rows (3,005 MISSING + 5,351 FAILED) using enhanced per-key credit tracking.",
+    "enhancement": "The script now intelligently skips API keys that have exhausted credits (HTTP 402 errors) and temporarily disables them, allowing other keys to continue working."
+  },
+  "step_1_prepare_environment": {
+    "title": "Step 1: Prepare Environment & Clear Old State",
+    "actions": [
+      "1. Verify you have 20 API keys with fresh/updated credit balances",
+      "2. Clear checkpoints (fresh start):",
+      "   rm -f /home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_1_social/classification_chunks/logs/checkpoint_chunk_*.json",
+      "3. Clear processed_failed.csv (allows failed rows to be reclassified):",
+      "   rm -f /home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_1_social/processed_failed.csv",
+      "4. KEEP processed_success.csv (prevents re-processing of successful rows)",
+      "5. Verify rerun input file exists:",
+      "   ls -lh /home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_1_social/unprocessed_rerun.parquet"
+    ]
+  },
+  "step_2_set_api_keys": {
+    "title": "Step 2: Set API Keys Environment Variable",
+    "option_A_inline": "export OPENROUTER_API_KEYS='key1,key2,key3,...,key20'",
+    "option_B_from_file": [
+      "If keys are in a file /path/to/keys.txt (one per line):",
+      "export OPENROUTER_API_KEYS=$(tr '\\n' ',' < /path/to/keys.txt | sed 's/,$//')"
+    ],
+    "verification": "echo $OPENROUTER_API_KEYS | tr ',' '\\n' | wc -l  (should print 20)"
+  },
+  "step_3_run_classification": {
+    "title": "Step 3: Run Classification with Enhanced Key Rotation",
+    "command": [
+      "cd /home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_1_social",
+      "python social_classifier_parallelization.py both --input unprocessed_rerun.parquet 2>&1 | tee rerun_$(date +%Y%m%d_%H%M%S).log"
+    ],
+    "parameters": "The script will:",
+    "parameters_details": [
+      "- Load 8,356 rows from unprocessed_rerun.parquet",
+      "- Process in chunks with your 20 API keys in parallel",
+      "- Rotate keys intelligently: when a key hits 402 (insufficient credits), it's marked as exhausted",
+      "- Skip exhausted keys and continue using others with available credits",
+      "- Every 5 minutes, re-test exhausted keys in case credits were refilled",
+      "- Perform 3-pass retry cascade for any failures (full batch, half batch, then individual)",
+      "- Output successful rows to processed_success.csv",
+      "- Output failed rows to processed_failed.csv"
+    ]
+  },
+  "step_4_monitor_progress": {
+    "title": "Step 4: Monitor & Interpret Logs",
+    "key_messages": [
+      "✅ 'API key …XXXXXX marked EXHAUSTED (402 credit limit)' — key hit credit limit, will be skipped",
+      "ℹ️ 'Re-enabling API key …XXXXXX (possible credit refill)' — retrying a previously exhausted key",
+      "✅ 'COST $X.XX / $1600.00 | X reviews | remaining $X' — cost tracking",
+      "🚨 'ALL API keys exhausted (402)' — all keys have hit limit; remaining rows will fail unless credits are refilled"
+    ],
+    "example_success": "If all goes well, you should see:",
+    "example_success_lines": [
+      "[chunk_0000] 500 reviews | batch_size=80",
+      "Batch chunk_0000_b0: 2.3s | in=1234 out=567 | cost=$0.00502",
+      "✅ COST $50.23 / $1600.00 | 4,500 reviews | remaining $1549.77"
+    ]
+  },
+  "step_5_post_run": {
+    "title": "Step 5: After Run Completes",
+    "actions": [
+      "1. Check the summary in classification_summary.json:",
+      "   cat classification_chunks/logs/classification_*.log | tail -100",
+      "2. Verify merged parquet was created:",
+      "   ls -lh ../../data/social_classified_text_reviews.parquet",
+      "3. Inspect new CSVs:",
+      "   wc -l processed_success.csv processed_failed.csv",
+      "4. If needed, regenerate the merged diagnostics:",
+      "   python -c 'import pandas as pd; df=pd.read_parquet(...); print(df.describe())'"
+    ]
+  },
+  "troubleshooting": {
+    "problem_all_keys_exhausted": {
+      "symptom": "All API keys exhausted (402)",
+      "causes": [
+        "- All 20 keys have consumed their monthly credit budget",
+        "- API keys are invalid or corrupted (same as before with non-ASCII chars)"
+      ],
+      "solution": [
+        "1. Check OpenRouter dashboard to confirm key balances",
+        "2. If budget exhausted, you need to refill credits (contact support or upgrade plan)",
+        "3. If keys are corrupted, verify OPENROUTER_API_KEYS env var has clean keys",
+        "4. Restart the script once credits are refilled"
+      ]
+    },
+    "problem_checkpoints_causing_issues": {
+      "symptom": "Script resumes from old checkpoint and fails",
+      "cause": "Stale checkpoint from previous run",
+      "solution": "Restart and always clear checkpoints first (Step 1)"
+    },
+    "problem_only_partial_rerun": {
+      "symptom": "Script only processes 100 rows instead of 8,356",
+      "causes": [
+        "- processed_success.csv still exists and filters out rows",
+        "- Review IDs don't match between source and rerun file"
+      ],
+      "solution": [
+        "1. Verify unprocessed_rerun.parquet has 8,356 rows",
+        "2. If processed_success.csv shouldn't filter anything, clear it",
+        "3. Check that review_id column names match"
+      ]
+    }
+  },
+  "files_and_outputs": {
+    "input": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_1_social/unprocessed_rerun.parquet (8,356 rows)",
+    "log_file": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_1_social/classification_chunks/logs/classification_YYYYMMDD_HHMMSS.log",
+    "outputs": {
+      "processed_success.csv": "Successfully classified rows (appended to existing if present)",
+      "processed_failed.csv": "Rows that failed after all retries",
+      "classified_chunk_*.parquet": "Per-chunk classification results"
+    }
+  },
+  "key_features_of_enhancement": {
+    "feature_1": "Per-key exhaustion tracking — tracks which keys hit HTTP 402",
+    "feature_2": "Intelligent rotation — skips exhausted keys, uses available ones",
+    "feature_3": "Periodic re-enabling — retests exhausted keys every 5 minutes",
+    "feature_4": "Graceful degradation — if all keys exhausted, logs error and continues with permanent failures",
+    "feature_5": "Per-pass tracking — separate key_tracker for each retry phase (Pass 2, 3, 4)"
+  }
+}

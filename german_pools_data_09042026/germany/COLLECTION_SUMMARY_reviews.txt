@@ -1,0 +1,38 @@
+======================================================================
+COLLECTION SUMMARY - REVIEWS RUNNER
+======================================================================
+Stage: REVIEWS
+Execution Time: 207180.49 seconds (3453.01 minutes)
+Generated at: 2026-05-05 04:28:17
+
+------------------------EXTRACTION STATISTICS-------------------------
+Total Unique Places Processed:     1110
+Total API Requests Made:           22243
+Successful Requests:               22225 [99.9%]
+Failed Requests:                   18 [0.1%]
+
+--------------------------FAILURE BREAKDOWN---------------------------
+  • Failed to extract next page key
+    Count: 8 [44.4% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+  • Failed to retrieve JSON results for row
+    Count: 1 [5.6% of failures]
+
+======================================================================

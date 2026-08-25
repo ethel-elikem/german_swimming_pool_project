@@ -1,0 +1,46 @@
+{
+  "id": "gen-1779088916-yTJc0uGUSLZ0dxvAEkIa",
+  "object": "chat.completion",
+  "created": 1779088916,
+  "model": "anthropic/claude-4.6-sonnet-20260217",
+  "provider": "Anthropic",
+  "system_fingerprint": null,
+  "service_tier": "standard",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "length",
+      "native_finish_reason": "max_tokens",
+      "message": {
+        "role": "assistant",
+        "content": "```json\n[\n  {\n    \"review_id\": \"Ci9DQUlRQUNvZENodHljRjlvT2tjMWFtRkxhbWxYVVhoWWVEVkpka2x0VnpkdVduYxAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Pool Etiquette\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSURoazluQTFBRRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Pool Etiquette\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"yes\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"Ci9DQUlRQUNvZENodHljRjlvT210Rk9VcDFSRGczYlhkMk9ERjNaRXRwZFZGUFRIYxAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Hygiene / Pool Etiquette\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"yes\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"Ci9DQUlRQUNvZENodHljRjlvT2xaTFlYWjNZME0wVDB0clEzUmtYMncxVnpOSU1FRRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Clothing\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSURCdWFyRDB3RRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Pool Etiquette\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"Ci9DQUlRQUNvZENodHljRjlvT20xRmEzVk5hSFV5YW1oTFNYTjNabTAzTUhWV09IYxAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Staff\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"yes\"]\n  },\n  {\n    \"review_id\": \"ChZDSUhNMG9nS0VJQ0FnSUNxd28ycGJREAE\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Crowd Composition / Hygiene\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChZDSUhNMG9nS0VJQ0FnSUNieDg3Ylh3EAE\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Staff\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"yes\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSURNeWZXQXZnRRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Crowd Composition\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSUN1X1kzWTdnRRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Language\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"yes\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSUQwNXJlNjV3RRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Hygiene\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"yes\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSUNKMnRmSHh3RRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Crowd Composition\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSURVMXEyZm13RRAB\",\n    \"racialised\": \"no\",\n    \"theme\": \"None\",\n    \"connotation\": [\"Neutral\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSUR4bjlpUC1BRRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Crowd Composition\",\n    \"connotation\": [\"Neutral\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChZDSUhNMG9nS0VJQ0FnSUNkM192MGJ3EAE\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Access/Entry\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"yes\",\n    \"context\": [\"yes\"]\n  },\n  {\n    \"review_id\": \"Ci9DQUlRQUNvZENodHljRjlvT21JNFVYcGtNbTVtWDFObVkxTXpZVXAwTFcxVGJYYxAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Crowd Composition\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChZDSUhNMG9nS0VJQ0FnSUNxNjVqck1BEAE\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Pool Etiquette\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"Ci9DQUlRQUNvZENodHljRjlvT205RVRqaEpibVoyUjFZeGNqbHlWRFZQY25SblJVRRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Crowd Composition\",\n    \"connotation\": [\"Negative\"],\n    \"approach\": \"no\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"ChdDSUhNMG9nS0VJQ0FnSURoZ3JMNGp3RRAB\",\n    \"racialised\": \"yes\",\n    \"theme\": \"Crowd Composition\",\n    \"connotation\": [\"Neutral\"],\n    \"approach\": \"yes\",\n    \"context\": [\"no\"]\n  },\n  {\n    \"review_id\": \"Ci9DQUlR",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 9762,
+    "completion_tokens": 2000,
+    "total_tokens": 11762,
+    "cost": 0.059286,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.059286,
+      "upstream_inference_prompt_cost": 0.029286,
+      "upstream_inference_completions_cost": 0.03
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

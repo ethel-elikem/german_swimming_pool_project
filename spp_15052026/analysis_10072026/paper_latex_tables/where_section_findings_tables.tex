@@ -1,0 +1,58 @@
+% Requires: \usepackage{booktabs} \usepackage{array}
+% All numbers pulled directly from descriptive_analysis.ipynb's WHERE section
+% takeaway cells (Concentration / Is the dominant pool unusual / Prevalence /
+% Choropleths / Geometric proxy subsections). Both single-column tables.
+
+% ------------------------------------------------------------------
+% Table 1 -- correlation / significance tests
+% ------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{WHERE section: correlation tests (Spearman $\rho$, constituency level).}
+\label{tab:where-correlations}
+\begin{tabular}{@{} l r l r c @{}}
+\toprule
+Test & $\rho$ & $p$ & $n$ & Sig. \\
+\midrule
+Rate vs.\ \% pools affected & 0.65 & $\ll 0.001$ & 299 & *** \\
+Rate vs.\ top-pool share & 0.09 & n.s. & 299 & ns \\
+Dominant pool: volume vs.\ rate pctl.\ & $-0.59$ & $\approx 0$ & 299 & *** \\
+Border dist.\ (national bdry.), all & 0.048 & 0.412 & 299 & ns \\
+Border dist.\ (national bdry.), reliable & 0.083 & 0.194 & 247 & ns \\
+Border dist.\ (land-neighbour), all & $-0.055$ & 0.341 & 299 & ns \\
+Border dist.\ (land-neighbour), reliable & $-0.000$ & 0.996 & 247 & ns \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+$^{***}p<0.001$, ns = not significant. ``Reliable'' = constituencies clearing the revised $\geq 10$ racialised-reviews bar (247/299). Both border-distance measures are null regardless of restriction; the two distance measures correlate 0.557 with each other but neither tracks the rate.
+\end{table}
+
+% ------------------------------------------------------------------
+% Table 2 -- prevalence, reliability, and geography summary
+% ------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{WHERE section: prevalence, reliability, and concentration summary.}
+\label{tab:where-summary}
+\begin{tabular}{@{} p{0.44\linewidth} p{0.5\linewidth} @{}}
+\toprule
+Finding & Value \\
+\midrule
+Overall racialised rate & 1.54\% [95\% CI 1.51--1.58] \\
+Reliability bar, $\geq 5$ racialised reviews & 11/299 excluded (3.7\%) \\
+Reliability bar, $\geq 10$ (revised, used downstream) & 52/299 excluded (17.4\%) \\
+State-level rate range & 0.81\% (Mecklenburg-Vorpommern) to $\sim$3.0--3.1\% (Saarland/Berlin/Bremen) \\
+Pools affected per constituency & mean 39\%, median 36\% \\
+Top-pool share of a constituency's racialised reviews & mean 48\%, median 47\% \\
+Dominant pool driven by volume vs.\ rate & 280/299 (94\%) volume-driven; 19/299 (6\%) genuinely high-rate small venues \\
+Top hotspots (rate, $n$ social reviews) & Offenburg 8.6\% ($n$=1{,}724); Duisburg II 7.6\% ($n$=2{,}316); Gelsenkirchen 6.0\%; L\"orrach--M\"ullheim 5.7\% ($n$=3{,}975) \\
+Border-flag correction & 34/76 (45\%) originally-flagged ``border'' constituencies were coastline, not a land border \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,40 @@
+{
+  "total_population": 711004,
+  "sample_size": 400,
+  "strata_counts": {
+    "SE_no": {
+      "available": 451978,
+      "target": 80,
+      "sampled": 80
+    },
+    "SE_yes_RC_no": {
+      "available": 254073,
+      "target": 80,
+      "sampled": 80
+    },
+    "SE_yes_RC_yes_pleasant": {
+      "available": 1000,
+      "target": 60,
+      "sampled": 60
+    },
+    "SE_yes_RC_yes_ambiguous": {
+      "available": 1219,
+      "target": 90,
+      "sampled": 90
+    },
+    "SE_yes_RC_yes_discriminatory": {
+      "available": 2734,
+      "target": 90,
+      "sampled": 90
+    }
+  },
+  "sampling_date": "2026-01-06 23:49:26",
+  "random_seed": 42,
+  "sample_plan": {
+    "SE_no": 80,
+    "SE_yes_RC_no": 80,
+    "SE_yes_RC_yes_pleasant": 60,
+    "SE_yes_RC_yes_ambiguous": 90,
+    "SE_yes_RC_yes_discriminatory": 90
+  }
+}

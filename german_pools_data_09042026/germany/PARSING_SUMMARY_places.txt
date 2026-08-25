@@ -1,0 +1,27 @@
+======================================================================
+PARSING SUMMARY - PLACES PARSER
+======================================================================
+Stage: PLACES
+Execution Time: 21.15 seconds (0.35 minutes)
+Generated at: 2026-04-27 17:21:21
+
+-----------------------------OUTPUT FILES-----------------------------
+Places:
+  File: germany_places.parquet
+  Rows: 6,520
+  Columns: 32
+  Size: 1.69 MB
+
+Places_filtered:
+  File: germany_places_within.parquet
+  Rows: 6,466
+  Columns: 34
+  Size: 1.81 MB
+
+Few_reviews:
+  File: germany_few_reviews.parquet
+  Rows: 47,289
+  Columns: 19
+  Size: 19.30 MB
+
+======================================================================

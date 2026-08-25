@@ -1,0 +1,95 @@
+% Requires: \usepackage{booktabs} \usepackage{array} \usepackage{multirow}
+% (tabularx no longer needed -- explicit p{} widths give more control over the
+% Label/Definition/Example proportions than X columns splitting evenly would.
+% multirow is needed for the merged Stage 1+2 table's Stage column.)
+%
+% Each table below is a `table*` (spans both columns of the two-column layout,
+% giving the full \textwidth to work with instead of one narrow column) and
+% uses fixed p{} widths sized so Definition gets most of the room and Example
+% less. `table*` floats can only land at the top/bottom of a page (or a float
+% page) in two-column mode -- they will drift slightly from sitting literally
+% under each itemize bullet, which is normal/expected for wide floats in a
+% two-column document.
+
+\subsection{Theoretical Framework and Codebook}
+To identify racialised discourse, which we anticipate is a rare occurrence in the reviews, we created a hierarchical codebook to capture it.
+First, we are only interested in racialisation that is tied to social encounters at the pool. We define a social encounter review as one that references other people --- users or staff --- their presence, behaviour, appearance, language, or the atmosphere they create at the pool. The label is social encounter, and it is binary.
+
+Subsequently, we classify reviews that fall in the social encounter class as racialised or not. A review is racialised if --- reading it as a whole --- it attributes a behaviour, characteristic, attitude, presence, or quality of a group defined by race, ethnicity, nationality, culture, or religion.
+
+% ------------------------------------------------------------------
+% Stage 1 + 2 -- Social Encounter and Racialised (merged, single-column)
+% ------------------------------------------------------------------
+% Single-column `table` (not `table*`) so this one sits in \linewidth rather
+% than spanning both columns -- footnotesize (one step below \small) and a
+% combined "Stage: Label" column (no multirow) to keep it fittable; Definition
+% still wraps to several lines per row given how narrow a single column is.
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Stage 1 -- Social Encounter (\texttt{social}) and Stage 2 -- Racialised (\texttt{racialised}, applied to all Stage-1 Yes reviews).}
+\label{tab:codebook-social-racialised}
+\begin{tabular}{@{} l p{0.35\linewidth} p{0.24\linewidth} @{}}
+\toprule
+Label & Definition & Example \\
+\midrule
+Social: Yes & References other people -- users or staff -- their presence, behaviour, appearance, language, or the atmosphere they create. & ``The lifeguard was rude to me'' \\
+\addlinespace
+Social: No & Only the physical environment, facilities, pricing, or the reviewer's solitary experience; no reference to other people. & ``The pool water was very cold'' \\
+\midrule
+Racialised: Yes & Attributes anything to a group defined by race, ethnicity, nationality, culture, or religion -- explicitly, implicitly, or coded; any tone. & ``Too many Arabs -- doesn't feel like home'' \\
+\addlinespace
+Racialised: No & No racial/ethnic/national/religious anchor -- classist, gendered, generic-conduct, or tourist complaints that would read identically about any crowd. & ``Cheap entrance attracts a certain clientele'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Now, in the set of racialised reviews, we study racialisation across four non-hierarchical dimensions.
+\begin{itemize}
+    \item \textbf{Theme} -- What object or domain is being racialised? Theme follows the object of racialisation --- what/who is being racialised. We define nine themes -- Staff, Crowd, Belonging, Safety, Hygiene, Etiquette, Access, Language, Clothing, Security and Other to capture any other theme. A review could have up to three themes, if two or more distinct objects are genuinely and independently racialised.
+    \item \textbf{Context} -- Was the racialisation expressed as a specific incident, a generalisation, or both?
+    \item \textbf{Approach} -- How is the racialised group encoded in the review? This dimension classifies the encoding strategy used for each distinct racialised group.
+    \item \textbf{Connotation} -- What is the tone of the racialised content? Note: capture the tone of the racialised content only --- not the overall review sentiment.
+\end{itemize}
+
+% ------------------------------------------------------------------
+% Stage 3 -- Theme, Context, Approach, Connotation (merged)
+% ------------------------------------------------------------------
+% One table for all four dimensions (Dimension column via \multirow), since
+% each dimension is already defined above in prose -- the caption here just
+% names the table, it doesn't redefine each dimension again.
+\begin{table*}[htbp]
+\centering
+\small
+\caption{Stage 3 -- label definitions and a qualifying example for each of the four content dimensions (\texttt{theme}, \texttt{context}, \texttt{approach}, \texttt{connotation}), applied only to reviews already classified as racialised.}
+\label{tab:codebook-dimensions}
+\begin{tabular}{@{} l l p{0.46\textwidth} p{0.24\textwidth} @{}}
+\toprule
+Dimension & Label & Definition & Example \\
+\midrule
+\multirow[t]{11}{*}{Theme} & Staff & Pool staff are racialised as individuals or as a group -- their composition, features, conduct, attitude, behaviour, or language. & ``The Slavic-sounding lifeguard is disrespectful'' \\
+ & Crowd & Pool users are racialised -- who is present, absent, or how the pool population is characterised in racial/ethnic/national terms. & ``Beautiful pool, but there are too many Arabs'' \\
+ & Belonging & Racialisation of cultural fit, acceptance, or entitlement to be at the pool -- felt by the reviewer or projected onto others. & ``As a Muslim female, I did not feel accepted here'' \\
+ & Language & Racialisation of what language is spoken (or not), by whom -- staff, clientele, or signage. & ``All you hear at this pool is fluent Turkish'' \\
+ & Clothing & Swimwear or attire is racialised; includes unequal dress-code enforcement along racial, cultural, or religious lines. & ``I was not allowed to wear my burka'' \\
+ & Hygiene & Cleanliness of people, bodies, or sanitary practices is racialised. & ``Dirty Turkish people everywhere'' \\
+ & Etiquette & Behaviour, attitude, or adherence to pool norms is racialised. & ``They do not know German sauna culture'' \\
+ & Security & Security procedures or enforcement are racialised -- who is checked, how, and whether applied equally. & ``The guard searched us multiple times, but not the Germans ahead of us'' \\
+ & Safety & Personal safety or threat perception is racialised -- feeling unsafe or attributing danger/criminal behaviour to a racialised group. & ``An Arab boy stole my daughter's toy'' \\
+ & Access & Entry or access is racialised -- denied, restricted, delayed, or informally excluded on racial/ethnic/cultural/religious grounds. & ``We were denied access because of our skin colour'' \\
+ & Other & Racialisation is present and attributable but fits none of the above categories. & -- \\
+\midrule
+\multirow[t]{2}{*}{Context} & Incident & Racialisation is attached to a specific event, interaction, or occurrence -- something happened, with a describable moment or action. & ``The receptionist was racist when she found out I am Ukrainian'' \\
+ & Generalised & Racialisation is a generalisation or standing judgement about a person or group, not tied to a specific event; includes atmospheric observations about the pool in general. & ``Turkish people don't follow the rules'' \\
+\midrule
+\multirow[t]{3}{*}{Approach} & Explicit & Directly identifiable by a general reader without inference or specialist knowledge. \emph{Would a general reader immediately understand which group is referenced?} & ``There are too many Turkish people at the pool'' \\
+ & Coded & Identifiable only to a reader with specific in-group, cultural, or political knowledge; deliberate, deniable to outsiders. \emph{Would an in-group reader know who is meant, while a moderator might not?} & ``There aren't as many Ayse's and Fatma's here'' \\
+ & Implicit & No specific group identifiable from the text, even by an in-group reader; vague framing -- atmosphere, nostalgia, unnamed attribution. \emph{Could any reader identify the group from the text alone?} If no, Implicit. & ``There is no room for us here anymore'' \\
+\midrule
+\multirow[t]{3}{*}{Connotation} & Positive & Racialisation is favourable -- positive stereotypes, flattering attributions, or appreciation linked to racial/ethnic/cultural identity. & ``The German lifeguard is so patient with the kids'' \\
+ & Negative & Racialisation is unfavourable -- an us-vs-them dynamic, harm/threat attributed to a group, or discrimination framed in racial terms. & ``Dirty Turkish people everywhere -- no hygiene culture'' \\
+ & Neutral & Racialisation is present but tone is indeterminate -- a factual/demographic observation with no qualifying adjective conveying approval or disapproval. & ``The lifeguard speaks English and German'' \\
+\bottomrule
+\end{tabular}
+\end{table*}

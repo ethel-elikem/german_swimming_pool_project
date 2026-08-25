@@ -1,0 +1,48 @@
+[
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2tjMWFtRkxhbWxYVVhoWWVEVkpka2x0VnpkdVduYxAB",
+    "theme": [
+      "Crowd",
+      "Belonging"
+    ],
+    "connotation": "Negative",
+    "approach": "no",
+    "context": "no"
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSURoazluQTFBRRAB",
+    "theme": "Crowd",
+    "connotation": "Negative",
+    "approach": "yes",
+    "context": "no"
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT210Rk9VcDFSRGczYlhkMk9ERjNaRXRwZFZGUFRIYxAB",
+    "theme": [
+      "Crowd",
+      "Hygiene",
+      "Clothing"
+    ],
+    "connotation": "Negative",
+    "approach": "yes",
+    "context": "no"
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xaTFlYWjNZME0wVDB0clEzUmtYMncxVnpOSU1FRRAB",
+    "theme": [
+      "Clothing",
+      "Hygiene",
+      "Belonging"
+    ],
+    "connotation": "Negative",
+    "approach": "no",
+    "context": "no"
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSURCdWFyRDB3RRAB",
+    "theme": "Crowd",
+    "connotation": "Negative",
+    "approach": "no",
+    "context": "no"
+  }
+]

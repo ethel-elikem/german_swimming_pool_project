@@ -1,0 +1,78 @@
+% Requires: \usepackage{booktabs} \usepackage{array}
+% (multirow dropped -- neither table needs it anymore, see notes below)
+% All numbers pulled directly from descriptive_analysis.ipynb's executed output
+% (cells a34d63d7 / e0f55cc5 / 423a2b89, "Formal significance tests" section).
+% Significance stars: * p<0.05, ** p<0.01, *** p<0.001 (unmarked = not significant).
+
+% ------------------------------------------------------------------
+% Table 1 -- overall racialised rate by season (single column)
+% ------------------------------------------------------------------
+% Chi-square test of independence (racialised x season), pooled across all
+% years 2016-2025, actually-parsed-timestamp social subset (n=336,060).
+% Dropped the separate "Comparison" column (was the reason this didn't fit
+% \linewidth) -- the \midrule between the two pairs already groups them, and
+% each pair's chi2/p/V is printed once, on its first row, blank on the second.
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Racialised rate by season, pooled across all years (chi-square test of independence).}
+\label{tab:racialised-rate-season}
+\begin{tabular}{@{} l r r r r r @{}}
+\toprule
+Group & Rate (\%) & $n$ & $\chi^2$ & $p$ & V \\
+\midrule
+Indoor & 1.25 & 144{,}617 & 243.6 & $<0.001$ & 0.026 \\
+Outdoor & 1.92 & 191{,}443 & & & \\
+\midrule
+Summer & 2.03 & 144{,}571 & 263.3 & $<0.001$ & 0.027 \\
+Other & 1.33 & 191{,}489 & & & \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+Note: both effects are highly significant but small in size (Cram\'er's V $\approx 0.03$) -- with hundreds of thousands of reviews, even a modest association clears significance easily; read the $p$-values as confirming the effects are real, not as a claim about their size.
+\end{table}
+
+% ------------------------------------------------------------------
+% Table 2 -- per-label breakdown: season splits + post-2021 trend
+% ------------------------------------------------------------------
+% Dropped the three "Sig." columns (was 10 cols total, didn't fit \linewidth)
+% -- stars now sit as superscripts directly on the values instead: a star on
+% In./Out. marks that pair's own chi-square, a star on Sum./Oth. marks that
+% pair's own chi-square, a star on beta marks the trend's own p-value. Down
+% to 7 columns, all short/numeric, single-column now (was table* before).
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Content-dimension labels: prevalence by season and 2021--2025 trend (racialised subset, actually-parsed timestamps only, $n=5{,}693$). \texttt{theme} restricted to its top-5 labels by overall prevalence. Superscripts mark significance of that pair's/coefficient's own test.}
+\label{tab:dimension-season-trend}
+\begin{tabular}{@{} l l r r r r r @{}}
+\toprule
+Dim. & Label & In.\ \% & Out.\ \% & Sum.\ \% & Oth.\ \% & $\beta_{\text{year}}$ \\
+\midrule
+Theme & Crowd & 45.5 & 47.0 & 47.6 & 45.2 & $-0.066^{*}$ \\
+& Etiquette & 33.5$^{***}$ & 28.0$^{***}$ & 27.8$^{***}$ & 32.3$^{***}$ & $-0.029$ \\
+& Staff & 27.1 & 26.1 & 25.1$^{*}$ & 27.8$^{*}$ & \phantom{-}0.007 \\
+& Belonging & 19.0 & 19.4 & 19.4 & 19.0 & \phantom{-}0.064$^{*}$ \\
+& Clothing & 13.0$^{***}$ & 18.9$^{***}$ & 20.3$^{***}$ & 13.1$^{***}$ & \phantom{-}0.227$^{***}$ \\
+\midrule
+Context & Generalised & 83.2 & 83.3 & 83.6 & 83.0 & $-0.106^{**}$ \\
+& Incident & 41.2 & 41.4 & 41.4 & 41.3 & \phantom{-}0.106$^{***}$ \\
+\midrule
+Connotation & Negative & 88.2 & 88.1 & 88.2 & 88.1 & \phantom{-}0.217$^{***}$ \\
+& Neutral & 9.7 & 8.2 & 8.1 & 9.3 & $-0.151^{**}$ \\
+& Positive & 3.7$^{*}$ & 5.2$^{*}$ & 5.2$^{*}$ & 4.0$^{*}$ & $-0.182^{**}$ \\
+\midrule
+Approach & Explicit & 80.3$^{**}$ & 76.9$^{**}$ & 76.7$^{**}$ & 79.6$^{**}$ & $-0.040$ \\
+& Implicit & 13.7$^{***}$ & 17.4$^{***}$ & 17.8$^{***}$ & 14.3$^{***}$ & \phantom{-}0.046 \\
+& Coded & 9.3 & 9.9 & 9.9 & 9.4 & \phantom{-}0.068 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+$^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$ (unmarked = not significant). A star on In.\%/Out.\% marks the indoor/outdoor chi-square for that label; a star on Sum.\%/Oth.\% marks the summer/other chi-square; a star on $\beta_{\text{year}}$ marks that label's own 2021--2025 trend p-value. In./Out.\ and Sum./Oth.\ are the share of racialised reviews carrying that label within each season group (not the overall racialised rate). $\beta_{\text{year}}$ is the year-centered logistic-regression coefficient (log-odds/year), restricted to 2021--2025, the window flagged as visually steeper in the yearly trend figure above; \texttt{approach}'s null trends and modest season effects should be read alongside its low inter-annotator agreement (documented separately).
+\end{table}

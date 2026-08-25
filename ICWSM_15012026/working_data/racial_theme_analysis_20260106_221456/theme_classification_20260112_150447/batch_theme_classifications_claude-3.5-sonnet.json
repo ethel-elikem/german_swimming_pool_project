@@ -1,0 +1,473 @@
+[
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUN3eU1Lai1nRRAB",
+    "ranked_themes": [
+      "Safety and Security",
+      "Facility Cleanliness",
+      "Price and Value"
+    ],
+    "confidence_scores": {
+      "Safety and Security": 1.0,
+      "Facility Cleanliness": 0.7,
+      "Price and Value": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25KWlZETktMWHBaT1VSS2NHRnlPR1F4VG1wRWVWRRAB",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Language and Communication",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Language and Communication": 0.7,
+      "Staff Behavior and Treatment": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNhN01md3hnRRAB",
+    "ranked_themes": [],
+    "batch_id": 1,
+    "error": "Review not classified in batch output"
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNVMTZMTmJBEAE",
+    "ranked_themes": [
+      "Cultural Tensions and Integration",
+      "Family Experience",
+      "Price and Value"
+    ],
+    "confidence_scores": {
+      "Cultural Tensions and Integration": 1.0,
+      "Family Experience": 0.7,
+      "Price and Value": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnTURBbVByZ09BEAE",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Staff Behavior and Treatment": 0.7
+    },
+    "batch_id": 1,
+    "theme_count": 2
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25kRlVFWjRVR2hrZHpZM0xYVlhibmxNVlhGZllsRRAB",
+    "ranked_themes": [
+      "Cultural Tensions and Integration",
+      "Facility Cleanliness",
+      "Safety and Security"
+    ],
+    "confidence_scores": {
+      "Cultural Tensions and Integration": 1.0,
+      "Facility Cleanliness": 0.7,
+      "Safety and Security": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNPOF9LeGR3EAE",
+    "ranked_themes": [
+      "Safety and Security",
+      "Family Experience",
+      "Facility Cleanliness"
+    ],
+    "confidence_scores": {
+      "Safety and Security": 1.0,
+      "Family Experience": 0.7,
+      "Facility Cleanliness": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSURmb011d193RRAB",
+    "ranked_themes": [
+      "Overcrowding and Capacity",
+      "Price and Value"
+    ],
+    "confidence_scores": {
+      "Overcrowding and Capacity": 1.0,
+      "Price and Value": 0.7
+    },
+    "batch_id": 1,
+    "theme_count": 2
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT214Q2MzbG9VbkpqWWt4VUxXcHVWWFZMYkVGeFJIYxAB",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Language and Communication",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Language and Communication": 0.7,
+      "Staff Behavior and Treatment": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNKMElYSERREAE",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment",
+      "Price and Value"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Staff Behavior and Treatment": 0.7,
+      "Price and Value": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUM3OFlYNC1RRRAB",
+    "ranked_themes": [
+      "Gender-Based Issues",
+      "Cultural Tensions and Integration",
+      "Safety and Security"
+    ],
+    "confidence_scores": {
+      "Gender-Based Issues": 1.0,
+      "Cultural Tensions and Integration": 0.7,
+      "Safety and Security": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNCdHNDTXN3RRAB",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment",
+      "Price and Value"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Staff Behavior and Treatment": 0.7,
+      "Price and Value": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSURrLThlMk93EAE",
+    "ranked_themes": [
+      "Cultural Tensions and Integration"
+    ],
+    "confidence_scores": {
+      "Cultural Tensions and Integration": 1.0
+    },
+    "batch_id": 1,
+    "theme_count": 1
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VNTGQ3dGlMNXZPT1BREAE",
+    "ranked_themes": [
+      "Language and Communication",
+      "Staff Behavior and Treatment",
+      "Facility Cleanliness"
+    ],
+    "confidence_scores": {
+      "Language and Communication": 1.0,
+      "Staff Behavior and Treatment": 0.7,
+      "Facility Cleanliness": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25kalkyaEJZa0p5TkVvNE5sWnljV2s1Wm1GZlUxRRAB",
+    "ranked_themes": [
+      "Language and Communication",
+      "Staff Behavior and Treatment",
+      "Overcrowding and Capacity"
+    ],
+    "confidence_scores": {
+      "Language and Communication": 1.0,
+      "Staff Behavior and Treatment": 0.7,
+      "Overcrowding and Capacity": 0.4
+    },
+    "batch_id": 1,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xKSmREUkVkM1JxU0hwcmIzWTJTMFZQZDJjdE5uYxAB",
+    "ranked_themes": [
+      "Religious Accommodation",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Religious Accommodation": 1.0,
+      "Staff Behavior and Treatment": 0.7
+    },
+    "batch_id": 1,
+    "theme_count": 2
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT200eFpqVTFUSFF3TXpOS09XNU9WR280WW5SWU1VRRAB",
+    "ranked_themes": [
+      "Overcrowding and Capacity"
+    ],
+    "confidence_scores": {
+      "Overcrowding and Capacity": 1.0
+    },
+    "batch_id": 1,
+    "theme_count": 1
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUQ0eS1MdG1BRRAB",
+    "ranked_themes": [
+      "Cultural Tensions and Integration",
+      "Facility Cleanliness"
+    ],
+    "confidence_scores": {
+      "Cultural Tensions and Integration": 1.0,
+      "Facility Cleanliness": 0.7
+    },
+    "batch_id": 1,
+    "theme_count": 2
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNNbmZtSlJREAE",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Staff Behavior and Treatment": 0.7
+    },
+    "batch_id": 1,
+    "theme_count": 2
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNhdC16Z2hBRRAB",
+    "ranked_themes": [
+      "Other"
+    ],
+    "confidence_scores": {
+      "Other": 1.0
+    },
+    "batch_id": 1,
+    "theme_count": 1
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSUM1dE9mTUN3EAE",
+    "ranked_themes": [
+      "Price and Value",
+      "Other",
+      "Facility Cleanliness"
+    ],
+    "confidence_scores": {
+      "Price and Value": 1.0,
+      "Other": 0.7,
+      "Facility Cleanliness": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNIazdqdTR3RRAB",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Staff Behavior and Treatment": 0.7
+    },
+    "batch_id": 2,
+    "theme_count": 2
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSUM3aE9uNENBEAE",
+    "ranked_themes": [
+      "Safety and Security",
+      "Facility Cleanliness",
+      "Price and Value"
+    ],
+    "confidence_scores": {
+      "Safety and Security": 1.0,
+      "Facility Cleanliness": 0.7,
+      "Price and Value": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT214amJFaDRkRFYwTkc5dmRGUkpTVkZxY0U5d2EzYxAB",
+    "ranked_themes": [
+      "Religious Accommodation",
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Religious Accommodation": 1.0,
+      "Cultural and Racial Discrimination": 0.7,
+      "Staff Behavior and Treatment": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2toMmRXSnBVRU14TTNocmMwTTBMV2w1UkZKMldIYxAB",
+    "ranked_themes": [
+      "Religious Accommodation",
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Religious Accommodation": 1.0,
+      "Cultural and Racial Discrimination": 0.7,
+      "Staff Behavior and Treatment": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNIbElLZWdBRRAB",
+    "ranked_themes": [
+      "Staff Behavior and Treatment",
+      "Family Experience",
+      "Facility Cleanliness"
+    ],
+    "confidence_scores": {
+      "Staff Behavior and Treatment": 1.0,
+      "Family Experience": 0.7,
+      "Facility Cleanliness": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2psR1lqUkZaSEF6UkUxQlp6aFZhelZSWW5BNGVYYxAB",
+    "ranked_themes": [
+      "Staff Behavior and Treatment",
+      "Family Experience"
+    ],
+    "confidence_scores": {
+      "Staff Behavior and Treatment": 1.0,
+      "Family Experience": 0.7
+    },
+    "batch_id": 2,
+    "theme_count": 2
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSURIbjdLd0xBEAE",
+    "ranked_themes": [
+      "Family Experience",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Family Experience": 1.0,
+      "Staff Behavior and Treatment": 0.7
+    },
+    "batch_id": 2,
+    "theme_count": 2
+  },
+  {
+    "review_id": "ChZDSUhNMG9nS0VJQ0FnSURiNnFDd0FREAE",
+    "ranked_themes": [
+      "Safety and Security",
+      "Cultural Tensions and Integration",
+      "Family Experience"
+    ],
+    "confidence_scores": {
+      "Safety and Security": 1.0,
+      "Cultural Tensions and Integration": 0.7,
+      "Family Experience": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25GdWMxWTRUWFpQUlhsT2JrSXlUR2hvUVVWR1JrRRAB",
+    "ranked_themes": [
+      "Cultural Tensions and Integration",
+      "Safety and Security",
+      "Gender-Based Issues"
+    ],
+    "confidence_scores": {
+      "Cultural Tensions and Integration": 1.0,
+      "Safety and Security": 0.7,
+      "Gender-Based Issues": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT214dmJrSlFkRFZmVkZScE1qRTJSV2RLVm1SUU9WRRAB",
+    "ranked_themes": [
+      "Staff Behavior and Treatment",
+      "Facility Cleanliness",
+      "Price and Value"
+    ],
+    "confidence_scores": {
+      "Staff Behavior and Treatment": 1.0,
+      "Facility Cleanliness": 0.7,
+      "Price and Value": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2s1WVNXbEtkR05RTWtjMVExWjFkWE5WVmxZelVIYxAB",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Gender-Based Issues",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Gender-Based Issues": 0.7,
+      "Staff Behavior and Treatment": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT200d05UZFFha3hDUkVSNk9VMXJRbU5MUmxoS1VuYxAB",
+    "ranked_themes": [
+      "Cultural and Racial Discrimination",
+      "Staff Behavior and Treatment"
+    ],
+    "confidence_scores": {
+      "Cultural and Racial Discrimination": 1.0,
+      "Staff Behavior and Treatment": 0.7
+    },
+    "batch_id": 2,
+    "theme_count": 2
+  },
+  {
+    "review_id": "Ci9DQUlRQUNvZENodHljRjlvT213dGNXMXJaMkYxVTJjeGNtWnRWa2c1Y0ROcGEyYxAB",
+    "ranked_themes": [
+      "Language and Communication",
+      "Price and Value",
+      "Facility Cleanliness"
+    ],
+    "confidence_scores": {
+      "Language and Communication": 1.0,
+      "Price and Value": 0.7,
+      "Facility Cleanliness": 0.4
+    },
+    "batch_id": 2,
+    "theme_count": 3
+  }
+]

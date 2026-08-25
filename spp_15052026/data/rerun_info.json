@@ -1,0 +1,50 @@
+{
+  "total_rows": 8356,
+  "missing_count": 3005,
+  "failed_count": 5351,
+  "columns_in_rerun": [
+    "review_id",
+    "unique_identifier",
+    "place_id",
+    "reviewer_id",
+    "reviewer_name",
+    "review_link",
+    "contributor_link",
+    "review_time",
+    "org_review",
+    "org_review_lang",
+    "trans_review",
+    "reviewer_rating",
+    "other_reviews",
+    "uploaded_pics",
+    "profile_pic",
+    "review_location",
+    "uploaded_pics_links",
+    "retrieved_time",
+    "other_ratings",
+    "needs_summary",
+    "has_classification"
+  ],
+  "created_at": "2026-05-12T20:42:19.735745",
+  "instructions": {
+    "step_1": "Make sure you have 20 API keys with sufficient credits configured in OPENROUTER_API_KEYS env var",
+    "step_2": "Clear checkpoints and old processed files (see recommendations below)",
+    "step_3": "Run: python social_classifier_parallelization.py both --input unprocessed_rerun.parquet"
+  },
+  "checkpoint_clearing_strategy": {
+    "RECOMMENDED": "Clear checkpoints (fresh start) + clear processed_failed.csv (to allow retries to be reclassified)",
+    "commands": [
+      "rm -f classification_chunks/logs/checkpoint_chunk_*.json",
+      "rm -f processed_failed.csv  (optional: keep processed_success.csv if you want to avoid re-processing successful rows)"
+    ],
+    "why_clear_checkpoints": "If a previous run crashed mid-way, stale checkpoints will cause issues. Starting fresh is safer.",
+    "why_clear_processed_failed": "This file contains the 5,351 failed rows. Clearing it allows them to be reclassified and potentially merged into processed_success.csv on success.",
+    "keep_processed_success": "YES — this prevents successful rows from being reclassified. The script will skip any review_id found in processed_success.csv."
+  },
+  "api_key_handling": {
+    "current": "Simple round-robin rotation (batch_idx % len(api_keys)). If one key hits 402 (credits exhausted), it will still be cycled through.",
+    "problem": "The script does not track which keys have exhausted credits. A key with 0 balance will fail ALL batches assigned to it.",
+    "suggested_improvement": "Add per-key credit tracking and skip exhausted keys, or use load-balancing library.",
+    "for_now": "Monitor logs for 402 errors. If one key hits 402, remove it from OPENROUTER_API_KEYS and restart."
+  }
+}

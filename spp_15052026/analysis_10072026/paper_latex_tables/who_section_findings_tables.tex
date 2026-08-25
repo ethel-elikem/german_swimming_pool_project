@@ -1,0 +1,90 @@
+% Requires: \usepackage{booktabs} \usepackage{array}
+% All numbers pulled directly from descriptive_analysis.ipynb WHO section
+% (takeaway cells + underlying code-cell printed output, cells 03060c4b/
+% ff15dc3f/7586cc41/1c5ac726/19e28b8e/bfc2f3b8/dac639cb/ed670d1d/83a62ea8/
+% 8bf1a65c/8130b4b0/9e722a72 -- the theme-pair cell added earlier).
+
+% ------------------------------------------------------------------
+% Table 1 -- ethnicity name-origin composition: social=yes vs racialised=yes
+% ------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Reviewer name-origin ethnicity composition, social=yes vs.\ racialised=yes ($n$=504,072 social=yes; overall association chi2=1573.1, $p\ll0.001$, Cram\'er's V=0.056).}
+\label{tab:who-ethnicity-composition}
+\begin{tabular}{@{} l r r r @{}}
+\toprule
+Category & Social (\%) & Racialised (\%) & Fold change \\
+\midrule
+Germany & 39.62 & 27.63 & 0.70$\times$ \\
+Arab & 1.92 & 5.95 & 3.1$\times$ \\
+T\"urkiye & 1.81 & 4.78 & 2.6$\times$ \\
+Other (real, non-top-10) & 23.27 & 25.54 & 1.1$\times$ \\
+Unknown (no prediction) & 7.74 & 11.07 & 1.4$\times$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+Remaining $\sim$26\% spread across the other top-10 countries (US, Russia, France, Indonesia, Poland, Philippines, Italy, Brazil), each within 1--2pp of its social-grain share at every grain --- the racialised-vs-not shift is concentrated in Germany/Arab/T\"urkiye/Unknown, not spread evenly.
+\end{table}
+
+% ------------------------------------------------------------------
+% Table 2 -- master significance / effect-size reference
+% ------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{WHO section and cross-dimension association tests (chi-square, Cram\'er's V).}
+\label{tab:who-significance-master}
+\begin{tabular}{@{} l r r l r @{}}
+\toprule
+Test & $n$ & $\chi^2$ (dof) & $p$ & V \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Composition}} \\
+Ethnicity (12-cat) $\times$ racialised & 504{,}072 & 1573.1 & $\ll 0.001$ & 0.056 \\
+Language (11-cat) $\times$ racialised & 504{,}072 & 645.4 (10) & 3.3e-132 & 0.036 \\
+Ethnicity (13) $\times$ language (15) & 7{,}768 & 5349.8 (168) & $\approx 0$ & 0.240 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Dimension $\times$ German-status (binary, $n$=6,908)}} \\
+theme & 6{,}908 & 393.1 (10) & 2.8e-78 & 0.180 \\
+context & 6{,}908 & --- & $<0.05$ & 0.085 \\
+approach & 6{,}908 & 18.2 (2) & 1.1e-04 & 0.050 \\
+connotation & 6{,}908 & 7.1 (2) & 0.029 & 0.032 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Dimension $\times$ ethnicity\_final (12-way)}} \\
+theme & 6{,}908 & 1163.7 (110) & 1.9e-175 & 0.098 \\
+context & 6{,}908 & 165.1 (11) & 1.2e-29 & 0.139 \\
+approach & 6{,}908 & 70.8 (22) & 4.9e-07 & 0.070 \\
+connotation & 6{,}908 & 57.7 (22) & 4.9e-05 & 0.064 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Dimension $\times$ ethnicity\_group4 (5-way)}} \\
+theme & 6{,}908 & 1036.6 (40) & 2.6e-191 & 0.146 \\
+context & 6{,}908 & --- & --- & 0.132 \\
+approach & 6{,}908 & 60.3 (8) & 4.0e-10 & 0.065 \\
+connotation & 6{,}908 & 39.3 (8) & 4.4e-06 & 0.053 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Dimension $\times$ language, within Non-German ($n$=4,762)}} \\
+connotation & 4{,}762 & 324.5 (28) & 3.2e-52 & 0.183 \\
+approach & 4{,}762 & 89.5 (28) & 2.4e-08 & 0.095 \\
+context & 4{,}762 & 31.7 (14) & 0.004 & 0.073 \\
+theme & 4{,}762 & 381.2 (140) & 3.2e-24 & 0.067 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Theme content \& theme-pair composition}} \\
+theme $\times$ connotation (full subset) & 7{,}768 & 413.9 (20) & 2.6e-75 & 0.122 \\
+theme-pair (top-10) $\times$ group4 & 3{,}634 & 609.1 (27) & 3.7e-111 & 0.311 \\
+multi-theme rate $\times$ group4 & 3{,}634 & 6.52 (3) & 0.089 & 0.042 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Geography (East/West/Berlin) $\times$ dimension, per group4 (3/20 significant)}} \\
+Europe $\times$ theme & 655 & 33.7 (20) & 0.028 & 0.122 \\
+Other $\times$ theme & 3{,}274 & 60.7 (20) & $<0.001$ & 0.072 \\
+Other $\times$ approach & 3{,}274 & 11.0 (4) & 0.026 & 0.040 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+Cells marked --- were not reported as an exact statistic in the source cell (V and significance direction are still as stated). Every other geography$\times$dimension test (17/20, including \emph{all} of Germany/Arab/T\"urkiye on every dimension) is not significant, $p \geq 0.097$ throughout, Germany/Arab/T\"urkiye specifically $p \geq 0.155$. All effect sizes here are small-to-moderate by convention (Cram\'er's V $<0.35$); \texttt{theme-pair $\times$ group4} (V=0.311) is the single largest association found anywhere in this section.
+\end{table}

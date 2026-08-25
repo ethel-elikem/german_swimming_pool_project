@@ -1,0 +1,100 @@
+{
+  "built_at": "2026-08-06T00:03:24.927013",
+  "sources": {
+    "places": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data/places_filtered.parquet",
+    "corpus": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data/social_classified_text_reviews.parquet",
+    "racial_model": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_2_racial/processed_success.csv",
+    "reclass": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data/racialised_reclassified_text_reviews_11471.parquet",
+    "scope": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data/racialised_reclassed_reviews.parquet",
+    "approach": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_3_subs/approach/reclass_approach/processed_success.csv",
+    "theme": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_3_subs/themes/processed_success.csv",
+    "connotation": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_3_subs/connotation/processed_success.csv",
+    "context": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/data_annotation/stage_3_subs/context/processed_success.csv",
+    "prediction_zip": "/home/ethel/Desktop/swimming_pool_project/spp_15052026/analysis_10072026/gmaps_data/Prediction Result.zip"
+  },
+  "base": {
+    "verified_pois": 5529,
+    "corpus_rows": 1265806,
+    "racial_model_rows": 541248,
+    "reclass_rows": 11471,
+    "dimension_scope_rows": 7768,
+    "approach_labelled": 7768,
+    "theme_labelled": 7768,
+    "connotation_labelled": 7768,
+    "context_labelled": 7768,
+    "social_counts": {
+      "no": 761733,
+      "yes": 504072,
+      "nan": 1
+    },
+    "racialised_counts": {
+      "nan": 761734,
+      "no": 496304,
+      "yes": 7768
+    },
+    "racialised_source_counts": {
+      "<NA>": 761734,
+      "model": 493280,
+      "model+reclassified": 10792
+    }
+  },
+  "place_data": {
+    "place_rows_not_in_corpus": 1,
+    "unmatched_review_rows": 0,
+    "place_columns_added": [
+      "place_retrieved_time",
+      "place_name",
+      "place_rating",
+      "place_total_reviews",
+      "primary_place_type",
+      "place_subtype",
+      "latitude",
+      "longitude",
+      "opening_hours"
+    ],
+    "note": "place_id was not used because places_filtered.parquet has duplicate and blank place_id values."
+  },
+  "gmaps_poi": {
+    "db_rows_matched": 1265806,
+    "unmatched_db_rows": 0,
+    "missing_review_timestamp_rows": 5762,
+    "gmaps_poi_columns_added": [
+      "review_timestamp",
+      "review_edited_timestamp",
+      "reply_time_text"
+    ],
+    "gmaps_poi_non_null_counts": {
+      "review_timestamp": 1260044,
+      "review_edited_timestamp": 1259951,
+      "reply_time_text": 144184
+    }
+  },
+  "ethnicity": {
+    "join_strategy": "Predictions are name-level. A reviewer-id lookup is built using each reviewer's most frequent observed name, then merged to the corpus on reviewer_id.",
+    "prediction_rows": 758558,
+    "prediction_rows_with_country_code": 722474,
+    "prediction_rows_with_country_name": 722474,
+    "review_rows_with_country_prediction": 1179672,
+    "reviewer_ids_with_country_prediction": 861747,
+    "reviewer_names_shared_by_multiple_ids": 51935,
+    "review_rows_using_shared_reviewer_name_prediction": 313032,
+    "reviewer_ids_with_multiple_observed_names": 1787,
+    "unresolved_country_codes": [],
+    "excluded_prediction_columns": [
+      "ethnicity_prediction_raw",
+      "ethnicity_age_prediction",
+      "ethnicity_gender_prediction"
+    ]
+  },
+  "dropped_corpus_columns": [
+    "needs_summary",
+    "racialised_source",
+    "in_dimension_scope",
+    "contributor_link",
+    "profile_pic",
+    "uploaded_pics_links"
+  ],
+  "master_rows": 1265806,
+  "master_columns": 37,
+  "racialised_analysis_rows": 7768
+}

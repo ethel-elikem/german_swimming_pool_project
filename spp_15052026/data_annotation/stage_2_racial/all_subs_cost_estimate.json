@@ -1,0 +1,15 @@
+{
+  "already_classified": 409593,
+  "processed_failed": 127795,
+  "remaining_unprocessed": 3860,
+  "total_considered": 413453,
+  "num_to_classify_2pct": 8270,
+  "avg_review_chars": 309.2472281294285,
+  "sys_prompt_chars": 0,
+  "sys_tokens_est": 0.0,
+  "avg_text_tokens_est": 77.31180703235712,
+  "per_review_input_tokens_est": 87.31180703235712,
+  "per_review_output_tokens_assumed": 80.0,
+  "per_review_cost_est": 0.0014619354210970714,
+  "total_cost_est": 12.09020593247278
+}

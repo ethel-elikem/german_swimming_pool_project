@@ -1,0 +1,241 @@
+% Requires: \usepackage{booktabs} \usepackage{array}
+% Sources (numbers pulled directly, not re-derived):
+%   - inter_annotator_agreement.ipynb + data_annotation_validation/iaa_results/iaa_summary.csv
+%     (Ethel-Keziah IAA, Ethel-vs-model validation). `approach` excluded from IAA per instruction
+%     (Keziah's approach sheet predates the current 3-label scheme -- see notebook cell 2b7ec6ed);
+%     `theme` excluded throughout (never human-annotated at all).
+%   - robustness_check/ROBUSTNESS_CHECK_REPORT.md (rerun + back-translation stability, all 6
+%     classifiers -- no exclusions requested here, theme/approach included).
+
+% ====================================================================
+% PART 1 -- Inter-annotator agreement (Ethel vs. Keziah)
+% social/racialised/context/connotation only; approach and theme excluded.
+% ====================================================================
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{IAA, binary tasks (Ethel vs.\ Keziah). Cohen's $\kappa$ with bootstrap 95\% CI.}
+\label{tab:iaa-binary}
+\begin{tabular}{@{} l r r r @{}}
+\toprule
+Task & $n$ & Raw agreement & $\kappa$ [95\% CI] \\
+\midrule
+social, recall sample$^{\dagger}$ & 100 & 0.870 & 0.729 [0.58, 0.85] \\
+social, precision sample$^{\ddagger}$ & 47 & 0.872 & 0.000 [0.00, 0.00] \\
+racialised, precision sample$^{\ddagger}$ & 50 & 0.980 & 0.658 [0.00, 1.00] \\
+racialised, dimension sample$^{\ddagger}$ & 197 & 0.939 & $-0.023$ [$-0.04$, 0.00] \\
+racialised, recall sample$^{\dagger}$ & 100 & 0.990 & 0.795 [0.00, 1.00] \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+$^{\dagger}$Random sample of the population (estimates corpus-level agreement). $^{\ddagger}$Drawn only from model-positive rows by sampling design -- one class dominates (~90--98\%), so $\kappa$ is unstable/near-zero (the ``kappa paradox'') despite high raw agreement; read raw agreement as the primary number on these rows, per the source notebook's own guidance.
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{IAA, dimension tasks (Ethel vs.\ Keziah): set-valued agreement.}
+\label{tab:iaa-dimension}
+\begin{tabular}{@{} l r r r @{}}
+\toprule
+Task & $n$ & Exact-set agreement & Mean Jaccard \\
+\midrule
+context & 148 & 0.696 & 0.750 \\
+connotation & 241 & 0.710 & 0.745 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{IAA, per-label Cohen's $\kappa$ (Ethel vs.\ Keziah), each label as its own present/absent task.}
+\label{tab:iaa-per-label}
+\begin{tabular}{@{} l l r @{}}
+\toprule
+Task & Label & $\kappa$ \\
+\midrule
+Context & Generalised & 0.486 \\
+& Incident & 0.515 \\
+\midrule
+Connotation & Negative & 0.644 \\
+& Neutral & 0.482 \\
+& Positive & 0.643 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+By the Landis \& Koch (1977) convention: 0.41--0.60 = moderate, 0.61--0.80 = substantial. Context and connotation sit at fair-to-moderate/moderate-to-substantial human--human agreement; \texttt{neutral} is connotation's weakest label.
+\end{table}
+
+% ====================================================================
+% PART 2 -- Validation against Ethel (Ethel vs. model)
+% social/racialised/approach/context/connotation; theme excluded only.
+% ====================================================================
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Headline validation estimates, Ethel as ground truth (binary gate classifiers).}
+\label{tab:validation-headline}
+\begin{tabular}{@{} l r r @{}}
+\toprule
+Estimate & $n$ & Value [95\% Wilson CI] \\
+\midrule
+Precision of \texttt{social}=yes & 50 & 100.0\% [92.9, 100.0] \\
+Precision of \texttt{racialised}=yes (pooled) & 250 & 98.0\% [95.4, 99.1] \\
+False-negative rate, \texttt{racialised} (among model-no) & 97 & 0.0\% [0.0, 3.8] \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+FN-rate CI upper bound (3.8\%) still implies a wide corpus-level range on missed racialised reviews (0--18,792) given $n$=97 -- a larger recall sample would narrow this materially; treat current racialised-review counts as a plausible lower bound, not an exact count.
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Ethel vs.\ model, binary tasks (raw agreement / $\kappa$, same sheets as Table~\ref{tab:iaa-binary}).}
+\label{tab:validation-binary}
+\begin{tabular}{@{} l r r r @{}}
+\toprule
+Task & $n$ & Raw agreement & $\kappa$ [95\% CI] \\
+\midrule
+social, recall sample$^{\dagger}$ & 100 & 0.990 & 0.980 [0.94, 1.00] \\
+social, precision sample$^{\ddagger}$ & 50 & 1.000 & --- (undefined, no variance) \\
+racialised, precision sample$^{\ddagger}$ & 50 & 0.960 & 0.000 [0.00, 0.00] \\
+racialised, dimension sample$^{\ddagger}$ & 200 & 0.985 & 0.000 [0.00, 0.00] \\
+racialised, recall sample$^{\dagger}$ & 100 & 1.000 & 1.000 [1.00, 1.00] \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+Same kappa-paradox caveat as Table~\ref{tab:iaa-binary} applies to the $\ddagger$ rows -- read Table~\ref{tab:validation-headline}'s precision/FN-rate estimates as the substantive numbers, not these $\kappa$ values.
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{\texttt{approach}: Ethel (ground truth) vs.\ model, per-label precision/recall ($n$=150).}
+\label{tab:validation-approach}
+\begin{tabular}{@{} l r r r r @{}}
+\toprule
+Label & $n_{\text{Ethel}}$ & $n_{\text{model}}$ & Precision & Recall \\
+\midrule
+Explicit & 129 & 115 & 0.991 & 0.884 \\
+Coded & 16 & 21 & 0.619 & 0.812 \\
+Implicit & 13 & 26 & 0.385 & 0.769 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+Exact-set agreement 0.813, mean Jaccard 0.850 ($n$=150). \texttt{Implicit}'s low precision (16 false positives against only 10 true positives) is the dominant error mode: of 28 Ethel--model disagreements, most are cases where Ethel labelled \texttt{explicit} and the model called it \texttt{implicit} -- a specific, consistent boundary tendency, not random noise.
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{\texttt{context}/\texttt{connotation}: Ethel vs.\ model, set-valued agreement and per-label $\kappa$.}
+\label{tab:validation-context-connotation}
+\begin{tabular}{@{} l l r r @{}}
+\toprule
+Task & Label & Exact-set / $\kappa$ & Jaccard \\
+\midrule
+Context (overall) & --- & 0.689 & 0.845 \\
+& Generalised & 0.725 & --- \\
+& Incident & 0.650 & --- \\
+\midrule
+Connotation (overall) & --- & 0.520 & 0.669 \\
+& Negative & 0.541 & --- \\
+& Neutral & 0.316 & --- \\
+& Positive & 0.665 & --- \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+$n$=148 (context), $n$=246 (connotation). ``Overall'' rows are exact-set agreement / mean Jaccard; label rows below them are per-label Cohen's $\kappa$ (Ethel vs.\ model). \texttt{Neutral} is connotation's weakest label against the model too (κ=0.316), consistent with it being the weakest label against Keziah (Table~\ref{tab:iaa-per-label}).
+\end{table}
+
+% ====================================================================
+% PART 3 -- Robustness (rerun stability + translation sensitivity)
+% All six classifiers of record; no exclusions requested for this part.
+% ====================================================================
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Rerun and back-translation exact-label stability, all six classifiers of record.}
+\label{tab:robustness-stability}
+\begin{tabular}{@{} l r r r @{}}
+\toprule
+Classifier & $n$ (relabel/backtrans) & Relabel stability & Backtrans.\ stability \\
+\midrule
+social & 300 / 151 & 0.910 & 0.927 \\
+racialised & 300 / 150 & 0.940 & 0.940 \\
+approach & 387 / 155 & 0.912 & 0.845 \\
+context & 387 / 155 & 0.910 & 0.884 \\
+connotation & 387 / 155 & 0.894 & 0.826 \\
+theme & 387 / 155 & 0.801 & 0.716 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Paired translation-effect test (McNemar logic), all six classifiers.}
+\label{tab:robustness-mcnemar}
+\begin{tabular}{@{} l r r r r r r @{}}
+\toprule
+Classifier & $n$ pairs & Rerun-stab.\ & Backtrans.-stab.\ & Only-BT unstable & Only-rerun unstable & $p$ \\
+\midrule
+social & 151 & 0.914 & 0.927 & 3 & 5 & 0.73 \\
+racialised & 150 & 0.960 & 0.940 & 9 & 6 & 0.61 \\
+approach & 155 & 0.890 & 0.845 & 16 & 9 & 0.23 \\
+context & 155 & 0.935 & 0.884 & 11 & 3 & 0.06 \\
+connotation & 155 & 0.897 & 0.826 & 14 & 3 & \textbf{0.01} \\
+theme & 155 & 0.806 & 0.716 & 28 & 14 & \textbf{0.04} \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+Bold $p$ = significant translation-specific effect beyond ordinary rerun noise. The two gate classifiers (social, racialised) show none; connotation and theme do; context is borderline (0.06); approach does not (0.23) despite its separately weak IAA.
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{\texttt{racialised} rerun confusion matrix ($n$=286 cleanly-compared pairs).}
+\label{tab:robustness-confusion}
+\begin{tabular}{@{} l r r @{}}
+\toprule
+Canonical $\backslash$ rerun & No & Yes \\
+\midrule
+No & 137 & 0 \\
+Yes & 4 & 145 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+Perfect specificity (0/137 no$\to$yes); 4/149 (2.7\%) canonical-yes reviews flip to no on rerun -- a small, one-directional recall gap. Any residual instability biases prevalence estimates downward, not upward.
+\end{table}

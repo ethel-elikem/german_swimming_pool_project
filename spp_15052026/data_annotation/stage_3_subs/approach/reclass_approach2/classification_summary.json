@@ -1,0 +1,16 @@
+{
+  "total_reviews": 150,
+  "total_cost": 1.15,
+  "cost_per_review": 0.007667,
+  "reviews_per_hour": 5001.7,
+  "elapsed_hours": 0.03,
+  "budget_status": "OK",
+  "remaining_budget": 48.85,
+  "total_input_tokens": 335563,
+  "total_output_tokens": 9557,
+  "completion_time": "2026-07-06T17:39:11.448541",
+  "total_success": 150,
+  "total_failed": 0,
+  "checkpoint_success": 0,
+  "checkpoint_failed": 0
+}

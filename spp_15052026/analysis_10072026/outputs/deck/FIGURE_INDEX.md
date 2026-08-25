@@ -1,0 +1,25 @@
+# Figure/table index — modelling presentation deck
+
+- **F6_mean_variance_relationship.png** — 15 fitted-mean bins of racialised_reviews, observed variance vs mean, log-log, with Poisson/quasi-Poisson/NB reference curves. Headline: fitted slope=2.53 (quadratic, not linear) -- matches NB, not Poisson or quasi-Poisson
+- **F10_venue_concentration_vs_residual.png** — residual ratio (observed/predicted) vs top_pool_share and pct_pools_with_racialised, with LOWESS. Headline: rho(top_pool_share, abs_dev)=0.156 (p=0.00704); rho(pct_pools_with_racialised, abs_dev)=-0.072 (p=0.214); rho(n_pools, abs_dev)=-0.004 (p=0.945); rho(social_reviews, abs_dev)=-0.023 (p=0.686) — full 4-correlation table in T_F10_correlations.csv
+- **F9_observed_vs_predicted_alpha_envelope.png** — observed vs predicted rate, log-log, with the alpha-implied multiplicative envelope. Headline: alpha=0.185, sqrt(alpha)=0.43; 71% of constituencies inside the [x0.57, x1.43] envelope
+- **F16_aggregate_convergent_validity.png** — per-constituency share of reviewers not predicted Germany vs census foreign_population_pct. Headline: rho=0.802, p=1.5e-68, n=299 -- convergent validity check, independent of human judgement
+- **F3_predictor_scatter_grid.png** — racialised rate vs foreign_population_pct, log(density), sgb_ii_recipients_per_1k -- colour=East/West, size=social_reviews, LOWESS overlay. Headline: all three predictors rising with the outcome; East/West colour separation visible on density and benefits
+- **F7_coefficient_forest_plot.png** — final model rate ratios with 95% CI, log x-axis, plus the AfD spec's AfD term. Headline: top three predictors' CIs exclude 1.0; East Germany, split-city and AfD straddle or nearly straddle 1.0
+- **F5_east_west_bimodality.png** — histograms of foreign_population_pct, sgb_ii_recipients_per_1k, turnout_pct, coloured by East/West. Headline: East and West occupy largely separate ranges on benefits and turnout -- justifies the is_east indicator
+- **F4_predictor_correlation_heatmap.png** — Spearman correlation heatmap, 5 final predictors. Headline: max off-diagonal |rho| = 0.78 (foreign_population_pct x log_population_density)
+- **F11_venue_concentration.png** — Lorenz curve of racialised reviews across 5,305 pools; histogram of top_pool_share across 299 constituencies. Headline: Gini=0.867; top 1%/5%/10% of pools carry 30.8%/60.6%/75.7% of all racialised reviews; median top_pool_share=0.467
+- **F12_residual_diagnostics.png** — four-panel residual diagnostics for the final model: vs fitted, vs offset (social_reviews), QQ plot, by state. Headline: dispersion (Pearson chi2/df) = 1.502
+- **F13_residual_map.png** — left: raw racialised_rate choropleth; right: final model's Pearson residuals, diverging colourmap centred at 0. Headline: raw rate Moran's I=0.281 (p=0.001) -> residual Moran's I=0.105 (p=0.007)
+- **F1_outcome_distributions.png** — left: racialised_rate histogram; right: racialised_reviews count histogram with variance/mean annotated. Headline: variance/mean = 35.8 -- far above 1.0, rules out plain Poisson
+- **F2_precision_varies.png** — 299 constituencies sorted by racialised rate, Wilson 95% CI bars, coloured/sized by social_reviews. Headline: denominator ranges 307-11,097 social reviews (36x) -- CI width tracks it directly, justifying the offset
+- **F8_partial_effects.png** — predicted racialised rate across each continuous predictor's observed range, others held at their means, 95% band, actual data behind. Headline: all three partial effects rising; density's effect visibly non-linear on the raw (non-log) x-axis
+- **F14_theme_trajectories_by_direction.png** — left: reported-associated themes (Staff/Access/Belonging/Language) by year; right: attributed-associated (Crowd/Etiquette). Headline: reported-associated themes rising (Access x3.1, Belonging x1.5, Staff x1.4); attributed-associated falling/flat (Crowd x0.7, Etiquette x0.9)
+- **F15_group_rates_full_vs_clean.png** — racialised rate by ethnicity_group5, full sample vs clean-names-only, Wilson 95% CI. Headline: Arab:Germany 4.45x->4.71x; Türkiye:Germany 3.78x->3.78x -- survives clean-name restriction
+
+## Observations
+
+- Under the final alpha (0.1854513), the main model's Pearson dispersion is **1.50** (over-dispersed), not near 1 as the moment-matched plug-in alpha (0.375, dispersion 0.826, under-dispersed) implied it should land -- the two alpha estimators disagree about which side of 1.0 the family sits on, not just by how much.
+- F10: venue concentration barely explains the model's residual -- top_pool_share correlates weakly with |deviation| (rho=0.156, p=0.007) and pct_pools_with_racialised does not (rho=-0.072, p=0.21, ns). The unexplained variation is not chiefly a venue-concentration artifact.
+- F16: aggregate convergent validity is strong (rho=0.80, p~1e-68) -- ACUA's aggregate ethnicity signal tracks independently-measured census foreign population share closely.
+- T7: rows 1, 4, 5's AIC differ from any earlier draft of this table because alpha was re-estimated fresh per formula here rather than reusing one global alpha across rows (see in-script NOTE 2).

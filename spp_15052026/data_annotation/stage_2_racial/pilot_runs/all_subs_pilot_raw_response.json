@@ -1,0 +1,268 @@
+{
+  "success": [
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2tjMWFtRkxhbWxYVVhoWWVEVkpka2x0VnpkdVduYxAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURoazluQTFBRRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT210Rk9VcDFSRGczYlhkMk9ERjNaRXRwZFZGUFRIYxAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xaTFlYWjNZME0wVDB0clEzUmtYMncxVnpOSU1FRRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURCdWFyRDB3RRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT20xRmEzVk5hSFV5YW1oTFNYTjNabTAzTUhWV09IYxAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNxd28ycGJREAE",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNieDg3Ylh3EAE",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURNeWZXQXZnRRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSUN1X1kzWTdnRRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSUQwNXJlNjV3RRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNKMnRmSHh3RRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURVMXEyZm13RRAB",
+      "racialised": "no"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSUR4bjlpUC1BRRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNkM192MGJ3EAE",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21JNFVYcGtNbTVtWDFObVkxTXpZVXAwTFcxVGJYYxAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNxNjVqck1BEAE",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT205RVRqaEpibVoyUjFZeGNqbHlWRFZQY25SblJVRRAB",
+      "racialised": "yes"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURoZ3JMNGp3RRAB",
+      "racialised": "yes"
+    }
+  ],
+  "failed": [
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21abU56QTVlbE5vWW0xRlMzWlRURTB4YTBwNmRHYxAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSURyOHZ1MGNREAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSUQ3OF82XzZnRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUM3aFBDa1NnEAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURiLTV5c29RRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNNbWV1blBBEAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURKOE5lWHpnRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURXMnFUczdnRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2twVmVHZFlWRlF5TkdKTk5IcHdYMnROZGtwNVZFRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25ka2FXaHVRVTFXVFRaWFdsVkpkVWxIZEhwM1pYYxAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VPTGw4Yy0wNFBHZEZBEAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2s1WWJUWlhPSGxyVkMxT09XY3RTRk00WVZsdVFsRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURIdnNhcjV3RRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUM3bE9IVlZ3EAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNKdnBiQXdnRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2tFdFlrOTJSM2hMWWtNMVlWaHVkMmd4T0d4cVJYYxAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNDMkozSmJ3EAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNPMGVLMFh3EAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xSaVRscFZiazFzVFRKV05WaFlTVmhrVTBwTE9YYxAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUQ3MVBpRVBnEAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2kxUmFsVllORmxtTW5KR2RrY3hTbTFyVW5wdk0xRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURzLWFybHpBRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURSb3R2dXVnRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSURPak82QjBRRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21KdmJuaDZWMm95ZVVaWmRsaHNPR1pZZDFFM1dFRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUR1MUttR0d3EAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSUR1MEliOUJBEAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSURVd1BHZFFBEAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "ChZDSUhNMG9nS0VJQ0FnSURyajd2SkhBEAE",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21GTk5WQkxhRFZwUW5OSGNEaENjbEpSTWs1cVJFRRAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21kUlJ6a3liemxqTWtsdk5saEdiMFJ2VW1KS1QzYxAB",
+      "error": "salvage_missing",
+      "batch_id": "allsubs_pilot_b0",
+      "root_cause": "partial_response_salvage_failed"
+    }
+  ]
+}

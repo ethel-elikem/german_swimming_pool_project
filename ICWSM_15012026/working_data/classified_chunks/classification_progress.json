@@ -1,0 +1,13 @@
+{
+  "processed_chunks": [
+    "chunk_0",
+    "chunk_2",
+    "chunk_1"
+  ],
+  "all_success_count": 14736,
+  "all_failed_count": 238,
+  "total_cost": 0.0,
+  "total_reviews_processed": 0,
+  "current_batch_size": 20,
+  "last_update": 1764447035.3148031
+}

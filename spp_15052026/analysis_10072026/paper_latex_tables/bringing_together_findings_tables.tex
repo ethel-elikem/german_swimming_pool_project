@@ -1,0 +1,59 @@
+% Requires: \usepackage{booktabs} \usepackage{array}
+% All numbers pulled directly from descriptive_analysis.ipynb's "Bringing WHO
+% and WHERE together" section takeaway cells (90d2ee84/07c72082/60eec58c/3dc05a02).
+
+% ------------------------------------------------------------------
+% Table 1 -- constituency-level correlations
+% ------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Constituency-level correlations with \texttt{racialised\_rate} (Spearman $\rho$, 247 \texttt{reliable\_n} constituencies unless noted).}
+\label{tab:bringing-together-correlations}
+\begin{tabular}{@{} l r r c @{}}
+\toprule
+Predictor & $\rho$ & $p$ & Sig. \\
+\midrule
+pool\_count & $-0.556$ & 1.8e-21 & *** \\
+social\_reviews & $-0.337$ & 5.5e-08 & *** \\
+Arab share (ethnicity\_group4) & \phantom{-}0.211 & 0.001 & ** \\
+T\"urkiye share & \phantom{-}0.180 & 0.004 & ** \\
+Germany share & $-0.161$ & 0.011 & * \\
+Europe share & \phantom{-}0.105 & 0.100 & ns \\
+Other share & $-0.036$ & 0.573 & ns \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{Ethnicity share vs.\ distance to nearest land border (299 constituencies)}} \\
+Germany share & \phantom{-}0.126 & 0.047 & * \\
+Arab share & $-0.115$ & 0.072 & ns \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+$^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$, ns = not significant. \texttt{pool\_count}/\texttt{social\_reviews} correlate negatively with the rate (larger, more pool-dense constituencies show a lower rate); it is specifically Arab/T\"urkiye presence, not non-German presence generally, that predicts a higher rate. Both border-distance correlations are small and one is borderline non-significant --- consistent with WHERE's own null border-distance finding.
+\end{table}
+
+% ------------------------------------------------------------------
+% Table 2 -- descriptive summary (volume tiers, geography, border composition)
+% ------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Bringing WHO and WHERE together: descriptive summary.}
+\label{tab:bringing-together-summary}
+\begin{tabular}{@{} p{0.4\linewidth} p{0.54\linewidth} @{}}
+\toprule
+Finding & Value \\
+\midrule
+Volume, low-- vs.\ high-rate tier (15 each) & mean 3{,}195 social reviews / 32.4 pools (low) vs.\ 1{,}427 / 10.9 (high) --- low-rate tier is 2--3$\times$ bigger on both \\
+Theme mix, low-- vs.\ high-rate tier & Staff 18.5\% (low) vs.\ 8.6\% (high); Crowd 25.0\% vs.\ 31.3\%; Clothing 7.4\% vs.\ 11.4\% --- reverses the individual-level Arab/T\"urkiye$\to$Staff pattern found in WHO (ecological-fallacy caveat) \\
+Europe dominance, geography & clusters in Baden-W\"urttemberg (4/10 top constituencies), incl.\ L\"orrach--M\"ullheim itself (21.9\% Europe share, $n$=228) \\
+Germany dominance, geography & clusters in the East (Sachsen/Th\"uringen/Sachsen-Anhalt, 5/10 top constituencies), e.g.\ Zwickau at 71.4\% \\
+Arab/T\"urkiye dominance, geography & no single-state cluster --- Arab spans 5 states (NRW most frequent, 5/10), T\"urkiye spans 7 (NRW 3/10); concentrated in specific cities, not a regional gradient \\
+Land-border ($n$=39) vs.\ interior ($n$=208) composition & Germany 30.1\% vs.\ 32.0\%; Arab 7.6\% vs.\ 6.9\%; T\"urkiye 4.0\% vs.\ 5.4\%; Europe 8.8\% vs.\ 8.4\%; Other 49.5\% vs.\ 47.3\% --- no meaningful gap anywhere \\
+Land-border representation in rate tiers & only 2/15 high-rate and 4/15 low-rate constituencies are true land-border seats --- a small minority either way \\
+\bottomrule
+\end{tabular}
+\end{table}

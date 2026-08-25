@@ -1,0 +1,71 @@
+{
+  "total_reviews": 11471,
+  "missing_text_rows": 0,
+  "text_column": "trans_review",
+  "batch_size": 1,
+  "truncation_limit": 700,
+  "n_would_truncate": 2182,
+  "pct_would_truncate": 19.02,
+  "all_effective": {
+    "count": 11471,
+    "avg": 451.6,
+    "min": 5,
+    "max": 4108,
+    "p25": 171,
+    "p50": 337,
+    "p75": 602,
+    "p95": 1229,
+    "bracket_distribution": {
+      "0\u2013100": 1523,
+      "101\u2013250": 2900,
+      "251\u2013500": 3305,
+      "501\u2013700": 1561,
+      "701+": 2178
+    }
+  },
+  "cost_estimate": {
+    "model": "anthropic/claude-sonnet-4-6",
+    "batch_size": 1,
+    "truncation_limit": 700,
+    "avg_sent_chars_review": 371.7,
+    "char_to_token_ratio": 4.0,
+    "est_system_tokens_per_call": 1372.0,
+    "est_output_tokens_per_review": 45,
+    "est_total_input_tokens_base": 17283548,
+    "est_total_output_tokens_base": 516195,
+    "est_total_calls_base": 11471,
+    "est_total_cost_usd_base": 59.5936,
+    "retry_scenarios": [
+      {
+        "retry_rate": 0.0,
+        "estimated_extra_calls_one_retry": 0,
+        "estimated_extra_calls_two_retry": 0,
+        "estimated_cost_usd_one_retry": 59.5936,
+        "estimated_cost_usd_two_retry": 59.5936
+      },
+      {
+        "retry_rate": 0.05,
+        "estimated_extra_calls_one_retry": 574,
+        "estimated_extra_calls_two_retry": 1147,
+        "estimated_cost_usd_one_retry": 62.5732,
+        "estimated_cost_usd_two_retry": 65.5529
+      },
+      {
+        "retry_rate": 0.1,
+        "estimated_extra_calls_one_retry": 1147,
+        "estimated_extra_calls_two_retry": 2294,
+        "estimated_cost_usd_one_retry": 65.5529,
+        "estimated_cost_usd_two_retry": 71.5123
+      },
+      {
+        "retry_rate": 0.2,
+        "estimated_extra_calls_one_retry": 2294,
+        "estimated_extra_calls_two_retry": 4588,
+        "estimated_cost_usd_one_retry": 71.5123,
+        "estimated_cost_usd_two_retry": 83.431
+      }
+    ]
+  },
+  "missing_review_ids_sample": [],
+  "generated_at": "2026-05-29T13:17:39.089842"
+}

@@ -1,0 +1,43 @@
+% Requires: \usepackage{booktabs} \usepackage{array}
+% Cross-check of all 18 PREDICTOR_COLS used in 02_socioeconomic_political_relations.ipynb
+% against socio-economic_data/state_repeated_columns_report.csv and a fresh groupby-nunique
+% re-check on federal_baseline_eng_clean.csv (run 2026-07-31, matches the audit report).
+% This corrects an earlier internal note that wrongly included Bremen (2 constituencies) as
+% sharing state-wide-constant values -- Bremen is NOT affected for any of these 18 columns;
+% only Berlin (12) and Hamburg (6) are, 18 constituencies total, not 20.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Granularity of the 18 predictors used in notebook 02's correlation analysis.}
+\label{tab:predictor-granularity}
+\begin{tabular}{@{} l l l r @{}}
+\toprule
+Predictor & Denominator & Granularity & $n$ affected \\
+\midrule
+foreign\_population\_pct & population & constituency-measured & 0 \\
+age\_under\_18\_pct & population & state-rate-allocated (Berlin, Hamburg) & 18 \\
+age\_18\_24\_pct & population & state-rate-allocated (Berlin, Hamburg) & 18 \\
+age\_25\_34\_pct & population & state-rate-allocated (Berlin, Hamburg) & 18 \\
+age\_60\_74\_pct & population & state-rate-allocated (Berlin, Hamburg) & 18 \\
+age\_75\_plus\_pct & population & state-rate-allocated (Berlin, Hamburg) & 18 \\
+disposable\_income\_eur\_per\_capita & population & state-rate-allocated$^{\dagger}$ (Berlin, Hamburg) & 18 \\
+gdp\_eur\_per\_capita & population & state-rate-allocated$^{\dagger}$ (Berlin, Hamburg) & 18 \\
+employees\_pct\_of\_pop & population & state-rate-allocated (Berlin, Hamburg) & 18 \\
+sgb\_ii\_recipients\_pct & population & state-rate-allocated (Berlin, Hamburg) & 18 \\
+unemployment\_total & labor-force$^{\ddagger}$ & state-rate-allocated (Berlin, Hamburg) & 18 \\
+turnout\_pct & election (eligible voters) & constituency-measured & 0 \\
+second\_vote\_spd\_pct & election (valid votes) & constituency-measured & 0 \\
+second\_vote\_cdu\_csu\_pct & election (valid votes) & constituency-measured & 0 \\
+second\_vote\_greens\_pct & election (valid votes) & constituency-measured & 0 \\
+second\_vote\_afd\_pct & election (valid votes) & constituency-measured & 0 \\
+second\_vote\_left\_pct & election (valid votes) & constituency-measured & 0 \\
+second\_vote\_bsw\_pct & election (valid votes) & constituency-measured & 0 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+``State-rate-allocated'' = the underlying published rate is a single Berlin-wide or Hamburg-wide figure, re-scaled per constituency only by that constituency's own population share -- not an independently observed constituency-level measurement (see \texttt{README\_data\_processing.md}'s calibration note). Bremen's 2 constituencies are \emph{not} affected by any of these 18 columns (confirmed directly against \texttt{state\_repeated\_columns\_report.csv}); an earlier internal note wrongly included Bremen, now corrected. $^{\dagger}$\texttt{disposable\_income\_eur\_per\_capita}/\texttt{gdp\_eur\_per\_capita} are bit-for-bit identical across all 12 Berlin constituencies (total\_population cancels out algebraically); the other state-rate-allocated columns vary in the 4th decimal place due to intermediate whole-number rounding, but still carry no independent constituency-level information. $^{\ddagger}$\texttt{unemployment\_total} is the one predictor on a different denominator basis than the other 9 population-share predictors it is compared against -- labor-force-denominated, not population-denominated.
+\end{table}

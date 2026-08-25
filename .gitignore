@@ -1,0 +1,16 @@
+*.png
+*.csv
+*.parquet
+.venv/
+scrapenv/
+__pycache__/
+.DS_Store
+nlp_analysis/nlp_reviews/
+*.db
+*.db-wal
+*.db-shm
+*.zip
+*.log
+.env
+*.env
+api_key.txt

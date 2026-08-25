@@ -1,0 +1,12 @@
+{
+  "total_success": 697886,
+  "total_failed": 395711,
+  "success_rate": 0.6381564689734884,
+  "total_chunks_processed": 220,
+  "total_cost": 1200.0044999968159,
+  "cost_per_review": 0.0017194849875148892,
+  "reviews_per_hour": 24843.10349845199,
+  "total_time_hours": 28.09173982805676,
+  "final_batch_size": 4,
+  "completion_time": "2025-12-04T20:19:49.717381"
+}
